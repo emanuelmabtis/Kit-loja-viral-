@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kit Loja Viral</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #000000, #2c2c2c);
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header {
+      padding-top: 60px;
+      position: relative;
+    }
+
+    .title {
+      font-size: 3em;
+      font-weight: 700;
+      animation: pop 1s ease-out;
+    }
+
+    .blue-ball {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at top left, #6ecdfd, #165b9e);
+      border-radius: 50%;
+      margin: 20px auto;
+      box-shadow: 0 0 25px #0af;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes pop {
+      0% {transform: scale(0);}
+      100% {transform: scale(1);}
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+      font-size: 1.2em;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: inline-block;
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .arrow-down {
+      font-size: 2em;
+      margin-top: 10px;
+      animation: bounce 1.2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    .price-section {
+      margin: 30px 0;
+      font-size: 1.2em;
+    }
+
+    .price-section del {
+      color: #aaa;
+      margin-right: 10px;
+    }
+
+    .frases-exemplo, .feedbacks, .copiar-frases {
+      margin: 40px 0;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadein 1s ease forwards;
+      opacity: 0;
+    }
+
+    .frases-exemplo p, .feedbacks p {
+      background: #1c1c1c;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .copiar-frases button {
+      background: #0af;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    @keyframes fadein {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(40px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="blue-ball"></div>
+    <h1 class="title">KIT LOJA VIRAL</h1>
+    <a href="https://wa.me/5571984396895" class="btn-whatsapp" target="_blank">Liberar o Kit Loja Viral Agora</a>
+    <div class="arrow-down">⬇️</div>
+    <div class="price-section">
+      <p><del>R$ 79,00</del><strong> por R$ 27,90</strong></p>
+    </div>
+  </header>
+
+  <section class="frases-exemplo">
+    <h2>Exemplos do Kit:</h2>
+    <p>"Loja parada? Bora viralizar com frases certeiras."</p>
+    <p>"Essa frase aqui gera clique até de quem não quer comprar."</p>
+    <p>"Você viu isso aqui? Tá todo mundo copiando essa frase!"</p>
+  </section>
+
+  <section class="copiar-frases">
+    <h2>Copie e Compartilhe:</h2>
+    <p id="fraseCopiar">"Essa é a frase que mais converteu na última semana!"</p>
+    <button onclick="copiarFrase()">Copiar Frase</button>
+  </section>
+
+  <section class="feedbacks">
+    <h2>O que dizem sobre o Kit:</h2>
+    <p>"Minhas vendas subiram em 3 dias só usando as frases!"</p>
+    <p>"Achei que era só frase pronta, mas são frases que realmente viralizam."</p>
+  </section>
+
+  <script>
+    function copiarFrase() {
+      const texto = document.getElementById('fraseCopiar').innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        alert('Frase copiada com sucesso!');
+      });
+    }
+
+    // Animação ao rolar a página
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      sections.forEach(sec => {
+        const top = window.scrollY + window.innerHeight;
+        if (top > sec.offsetTop + 100) {
+          sec.style.animationPlayState = 'running';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
